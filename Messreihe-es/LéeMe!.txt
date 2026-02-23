@@ -1,0 +1,62 @@
+SerieMed - Herramienta auxiliar para contadores Geiger
+
+Este programa ayuda a diferenciar e identificar tipos de radiación con un contador Geiger.
+
+    Sin instalación: Simplemente descomprimir y ejecutar.
+	
+    Privacidad: El programa no transmite ni recopila datos.
+	
+    Sin cookies: Quien quiera cookies, que vaya a la pastelería...
+
+Instalación y lugar de almacenamiento
+
+Descomprime la carpeta "SerieMed" del archivo ZIP en un lugar de tu elección (p. ej. C:\SerieMed o Documentos).
+
+Importante: Evita las carpetas de sistema "Archivos de programa", "Archivos de programa x86" y "Windows", ya que Windows a menudo bloquea o sabotea los procesos de escritura (archivos Log) en ellas.
+
+Así funciona la medición
+
+El programa escucha en la fuente de entrada estándar (micrófono o Line-In).
+
+     Clic derecho en el símbolo del altavoz -> Abrir mezclador de volumen.
+
+     En "Sistema" > "Dispositivo de entrada" comprobar si el dispositivo correcto está activo.
+
+     Entrada manual: En caso de que no haya un micrófono disponible o el contador Geiger no tenga un "clic" acústico, los valores también se pueden introducir manualmente.
+
+Extras
+
+Mediante el botón "Biblioteca de Isótopos" se puede abrir directamente el programa vinculado Nukliddaten.exe.
+
+Encontrarás más detalles en el archivo adjunto Messreihe.pdf.
+
+--- Troubleshooting ---
+
+En caso de que el programa no se inicie o Windows cause problemas, se deben tener en cuenta los siguientes puntos:
+
+Síntoma: Al iniciar aparece un mensaje de error como "VCRUNTIME140.dll no fue encontrado".
+Solución: Instala el paquete "Microsoft Visual C++ Redistributable" (normalmente la versión x64 für Windows 11).
+
+Problema: Dado que Messreihe.exe es nuevo y "desconocido" para Microsoft, Windows 11 bloqueará el inicio.
+Mensaje: "Windows protegió su PC".
+Solución: El usuario debe hacer clic en "Más información" y luego en "Ejecutar de todas formas".
+
+Problema: Si el programa quiere escribir datos de medición en archivos (p. ej. en C:), a menudo faltan los derechos en un sistema recién instalado.
+Mensaje: "No tiene permiso para guardar en esta ubicación. Póngase en contacto con el administrador para obtener la autorización. ¿Desea guardar el archivo en la carpeta "Documentos" en su lugar?"
+Solución: Lo mejor es ejecutar el programa en una carpeta de usuario (p. ej. Escritorio o Documentos) o iniciarlo con clic derecho -> Ejecutar como administrador.
+
+Problema: Windows a menudo solo trae "controladores de pantalla estándar" después de la instalación. El programa dibuja gráficos (con matplotlib) y podría bloquearse o funcionar con tirones extremos.
+Solución: El usuario debe instalar los controladores de gráficos originales (NVIDIA, AMD o Intel).
+
+Mensaje: Una ventana de consola negra parpadea brevemente y se cierra de nuevo inmediatamente con el mensaje de error: ModuleNotFoundError: No module named 'matplotlib'
+Problema: Si el usuario se llama "User", todo está bien. Si se llama "Ramón Nuñez", el programa termina en la ruta C:\Users\Ramón Nuñez\.... Algunas bibliotecas de Python no se llevan bien con los acentos oder la letra "ñ" en la ruta de acceso.
+Solución: Colocar el programa en una ruta sin caracteres especiales (p. ej. C:\SerieMed).
+
+Problema: El sensible Defender puede clasificar la "Messreihe.exe" de forma general como "troyano" (por falta de certificado), porque se comporta como un archivo (se descomprime en la carpeta Temp al iniciar).
+Solución: El usuario debe añadir una excepción en el Windows Defender para la carpeta o el archivo.
+
+Problema: En portátiles modernos, Windows 11 a menudo está configurado a una escala del 150% o 200%. La ventana del programa podría verse borrosa por ello o los botones podrían quedar cortados.
+Solución: Clic derecho en Messreihe.exe -> Propiedades -> Compatibilidad -> Cambiar configuración de PPP alta.
+
+Problema: Si el usuario crea un acceso directo en el escritorio, pero el campo "Iniciar en" en las propiedades no es correcto, el programa ya no encontrará sus propios archivos de configuración.
+Solución: El programa siempre debe permanecer en la misma carpeta que sus archivos correspondientes.

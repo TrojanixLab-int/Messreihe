@@ -1,0 +1,65 @@
+Messreihe - Hilfstool für Geigerzähler
+
+Dieses Programm hilft dabei, mit einem Geigerzähler Strahlungsarten zu differenzieren und zu identifizieren.
+
+    Keine Installation nötig: Einfach entpacken und starten.
+
+    Datenschutz: Das Programm übermittelt oder sammelt keine Daten.
+
+    Cookie-frei: Wer Cookies möchte, muss zum Bäcker...
+
+Installation & Speicherort
+
+Entpacke den Ordner "Messreihe" aus der ZIP-Datei an einen Ort deiner Wahl (z.B. C:\Messreihe oder Dokumente).
+
+    Wichtig: Vermeide die Systemordner "Programme", "Programme x86" und "Windows", da Windows dort Schreibvorgänge (Logfiles) oft blockiert oder sabotiert.
+
+So funktioniert die Messung
+
+Das Programm lauscht auf der Standard-Eingabequelle (Mikrofon oder Line-In).
+
+    Rechtsklick auf das Lautsprechersymbol -> Lautstärkemixer öffnen.
+
+    Unter "System" > "Eingabegerät" prüfen, ob das richtige Gerät aktiv ist.
+
+    Manuelle Eingabe: Falls kein Mikrofon vorhanden ist oder der Geigerzähler keinen akustischen "Klicker" hat, können die Werte auch manuell eingetragen werden.
+
+Extras
+
+Über den Button "Nuklid-Daten" lässt sich direkt die verknüpfte Nukliddaten.exe aufrufen. 
+
+Weitere Details findest du in der beigefügten Messreihe.pdf.
+
+
+--- Troubleshooting ---
+
+Sollte sich das Programm nicht starten oder sollte Windows Ärger machen, sind folgende Punkte zu beachten:
+
+Symptom: Beim Start erscheint eine Fehlermeldung wie "VCRUNTIME140.dll wurde nicht gefunden".
+Lösung: Installiere das "Microsoft Visual C++ Redistributable"-Paket (meistens die x64-Version für Windows 11).
+
+Problem: Da Messreihe.exe neu und "unbekannt" für Microsoft ist, wird Windows 11 den Start blockieren.
+Meldung: "Der Computer wurde durch Windows geschützt".
+Lösung: Der Nutzer muss auf "Weitere Informationen" und dann auf "Trotzdem ausführen" klicken.
+
+Problem: Wenn das Programm Messdaten in Dateien schreiben will (z.B. in C:\), fehlen auf einem frischen System oft die Rechte.
+Meldung: "Sie verfügen nicht über die Berechtigung zum Speichern in diesem Pfad.
+Wenden Sie sich an den Administrator, um die Berechtigung abzurufen. Möchten Sie die Datei stattdessen im Ordner "Dokumente" speichern?"
+Lösung: Das Programm sollte am besten in einem Benutzerordner (z.B. Desktop oder Dokumente) ausgeführt werden oder mit Rechtsklick -> Als Administrator ausführen gestartet werden.
+
+Problem: Windows bringt nach der Installation oft nur "Standard-Display-Treiber" mit. Das Programm zeichnet Grafiken (mit matplotlib) und könnte es abstürzen oder extrem ruckeln.
+Lösung: Der Nutzer muss die originalen Grafiktreiber (NVIDIA, AMD oder Intel) installieren.
+
+Meldung: Ein schwarzes Konsolenfenster blitzt kurz auf und schließt sich sofort wieder mit der Fehlermeldung: ModuleNotFoundError: No module named 'matplotlib'
+Problem: Wenn der Nutzer "User" heißt, ist alles gut. Heißt er "Jörg Müller", landet das Programm im Pfad C:\Users\Jörg Müller\.... Manche Python-Bibliotheken kommen mit den Umlauten im Pfad nicht klar.
+Lösung: Das Programm in einen Pfad ohne Sonderzeichen zu legen (z.B. C:\Messreihe\).
+
+Problem: Der sensible Defender kann die "Messreihe.exe" pauschal als "Trojaner" einstufen (wegen fehlendem Zertifikat), weil sie sich wie ein Archiv verhält (sie entpackt sich beim Start in den Temp-Ordner).
+Lösung: Der Nutzer muss eine Ausnahme im Windows Defender für den Ordner oder die Datei hinzufügen.
+
+Problem: Auf modernen Laptops ist Windows 11 oft auf 150% oder 200% Skalierung eingestellt. Das Programmfenster könnte dadurch unscharf aussehen oder Schaltflächen könnten abgeschnitten sein.
+Lösung: Rechtsklick auf die Messreihe.exe -> Eigenschaften -> Kompatibilität -> Hohe DPI-Einstellungen ändern.
+
+Problem: Wenn der User eine Verknüpfung auf dem Desktop erstellt, aber das "Ausführen in"-Feld in den Eigenschaften nicht stimmt, findet das Programm seine eigenen Konfigurationsdateien nicht mehr.
+Troubleshooting: Das Programm muss immer im selben Ordner wie seine zugehörigen Dateien bleiben.
+

@@ -1,0 +1,61 @@
+SérieMes - Outil d'aide pour compteurs Geiger
+
+Ce programme aide à différencier et à identifier les types de rayonnements à l'aide d'un compteur Geiger.
+
+    Aucune installation requise: Décompressez simplement et lancez.
+
+    Protection des données: Le programme ne transmet ni ne collecte aucune donnée.
+
+    Sans cookies: Si vous voulez des cookies, allez chez le boulanger...
+
+Installation et emplacement de stockage
+
+Décompressez le dossier "Messreihe" du fichier ZIP vers l'emplacement de votre choix (par ex. C:\Messreihe ou Documents).
+
+    Important: Évitez les dossiers système "Programs", "Programs x86" et "Windows", car Windows y bloque ou sabote souvent les processus d'écriture (fichiers journaux/logfiles).
+
+Fonctionnement de la mesure
+
+Le programme écoute la source d'entrée standard (Microphone ou Entrée ligne).
+
+    Faites un clic droit sur l'icône du haut-parleur -> Ouvrir le mélangeur de volume.
+
+    Sous "Système" > "Entrée", vérifiez que le bon périphérique est actif.
+
+    Saisie manuelle: Si aucun microphone n'est disponible ou si le compteur Geiger n'a pas de "clic" acoustique, les valeurs peuvent également être saisies manuellement.
+
+Extras
+
+Le fichier Nukliddaten.exe associé peut être appelé directement via le bouton "Données des nucléides".
+Vous trouverez plus de détails dans le document Messreihe.pdf joint.
+
+--- Dépannage (Troubleshooting) ---
+
+Si le programme ne démarre pas ou si Windows pose des problèmes, les points suivants sont à noter :
+
+Symptôme: Au démarrage, un message d'erreur s'affiche, tel que "VCRUNTIME140.dll est introuvable".
+Solution: Installez le package "Microsoft Visual C++ Redistributable" (généralement la version x64 pour Windows 11).
+
+Problème: Comme Messreihe.exe est nouveau et "inconnu" pour Microsoft, Windows 11 bloquera le démarrage.
+Message: "Windows a protégé votre ordinateur".
+Solution: L'utilisateur doit cliquer sur "Informations complémentaires" puis sur "Exécuter quand même".
+
+Problème: Si le programme veut écrire des données de mesure dans des fichiers (par ex. dans C:), les droits manquent souvent sur un système neuf.
+Message: "Vous n'avez pas l'autorisation d'écrire à cet emplacement. Contactez l'administrateur pour obtenir l'autorisation. Voulez-vous enregistrer dans le dossier Documents à la place ?"
+Solution: Le programme devrait idéalement être exécuté dans un dossier utilisateur (par ex. Bureau ou Documents) ou être lancé via Clic droit -> Exécuter en tant qu'administrateur.
+
+Problème: Après l'installation, Windows ne fournit souvent que des "pilotes d'affichage de base". Le programme génère des graphiques (avec matplotlib) et pourrait planter ou saccader énormément.
+Solution: L'utilisateur doit installer les pilotes graphiques d'origine (NVIDIA, AMD oder Intel).
+
+Message: Une fenêtre de console noire clignote brièvement et se referme immédiatement avec le message d'erreur: ModuleNotFoundError: No module named 'matplotlib'
+Problème: Si l'utilisateur s'appelle "User", tout va bien. S'il s'appelle "François Benoît", le programme se retrouve dans le chemin C:\Users\François Benoît\.... Certaines bibliothèques Python ne gèrent pas les caractères accentués (â, ê, î, ô, û, é, è, à).
+Solution: Placer le programme dans un chemin sans caractères spéciaux (par ex. C:\Messreihe\).
+
+Problème: Le sensible Defender peut classer d'office "Messreihe.exe" comme "cheval de Troie" (en raison de l'absence de certificat), car il se comporte comme une archive (il se décompresse dans le dossier Temp au démarrage).
+Solution: L'utilisateur doit ajouter une exclusion dans Windows Defender pour le dossier ou le fichier.
+
+Problème: Sur les ordinateurs portables modernes, Windows 11 est souvent réglé sur une mise à l'échelle de 150 % ou 200 %. La fenêtre du programme pourrait paraître floue ou des boutons pourraient être coupés.
+Solution: Clic droit sur Messreihe.exe -> Propriétés -> Compatibilité -> Modifier les paramètres de résolution élevée (DPI).
+
+Problème: Si l'utilisateur crée un raccourci sur le bureau, mais que le champ "Démarrer dans" dans les propriétés est incorrect, le programme ne trouvera plus ses propres fichiers de configuration.
+Dépannage: Le programme doit toujours rester dans le même dossier que ses fichiers associés.
