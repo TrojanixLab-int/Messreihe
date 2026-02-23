@@ -1,3 +1,9 @@
+Project Information: Messreihe 3.0 (Portable Multi-Language Edition)
+
+| Developer: M.S. Trojan | Laboratory: Trojanix Lab INT 
+| Status: Open Source under AGPLv3 | Free Open Source Software
+
+License:
                     GNU AFFERO GENERAL PUBLIC LICENSE
                        Version 3, 19 November 2007
 
@@ -659,3 +665,34 @@ specific requirements.
 if any, to sign a "copyright disclaimer" for the program, if necessary.
 For more information on this, and how to apply and follow the GNU AGPL, see
 <https://www.gnu.org/licenses/>.
+
+
+Additional Legal Notices & Disclaimer
+
+Third-Party Software (Nukliddaten.exe)
+This distribution includes the external executable Nukliddaten.exe and its 
+associated database files (located in the /Data folder).
+
+Ownership: The intellectual property of the external tool "Nukliddaten" remains 
+with its respective creator.
+
+Usage: It is provided "as-is" to enhance the functionality of the isotope library 
+within the Trojanix Lab INT ecosystem. M.S. Trojan does not claim ownership of 
+this specific external component.
+
+Liability Disclaimer (No Warranty)
+In accordance with the AGPLv3 license, this software is provided for educational 
+and informational purposes only.
+
+No Medical/Safety Guarantee: SérieMes / Messreihe is not a certified life-safety 
+device. Measurements should not be used for official radiation protection 
+assessments or health-related decisions.
+
+Risk of Use: M.S. Trojan and Trojanix Lab INT shall not be held liable for any 
+damages, data loss, or incorrect radiation readings resulting from the use 
+or misuse of this software.
+
+Modification of Bundled Files
+To ensure the integrity of the nuclide database, users are advised not to modify, 
+rename, or delete files within the Data folder, as this will cause the external 
+component to fail.
