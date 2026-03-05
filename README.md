@@ -13,3 +13,7 @@ Eine portable, mehrsprachige Strahlungsanalyse- und Berechnungssoftware für Gei
 
 🇪🇸 Español
 Un software portátil de análisis y cálculo de radiación multilingüe para tubos Geiger-Müller que utiliza ADC de audio o inserción manual de mediciones, filtrado secuencial y una biblioteca de isótopos. Diferencia los tipos de radiación (Dosis Equivalente Ambiental, Alfa, Beta, Gamma). Disponible en inglés, francés, español, ruso y alemán. ¡Lea el LeéMe!.txt para más detalles o consulte el Messreihe.pdf!
+
++++++ LAST UPDATE +++++
+
+Added "Preset" function buttons, "last settings load" at start and fixed procentual total amount view (2026-03-05)
